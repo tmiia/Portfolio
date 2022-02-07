@@ -20,6 +20,15 @@ buttonMenu.addEventListener('click',function(){
 
 //INTRO ANIMATION
 window.onload = function visitors(){
+  if ( ! sessionStorage.getItem( 'doNotShow' ) ) {
+    sessionStorage.setItem( 'doNotShow', true );
+    introAnimation();
+    } else {
+      return
+    }
+}
+
+function introAnimation() {
   const tl = gsap.timeline({ defaults: { ease: "power1.out" } });
   let i = 0;
   while (i<1){
